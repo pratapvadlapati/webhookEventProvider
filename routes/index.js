@@ -4,10 +4,12 @@ const axios = require('axios');
 const events = require('events');
 const eventEmitter = new events.EventEmitter();
 var crypto = require('crypto');
+require('dotenv').config()
+
 
 //const reqData = require('./Req');
 //secret message api key shared by partner        
-var partnerApiKey = '2bh7Ptx0pdYn9NWv5a9S1WPaer2BQ3U4R40pygAqnQMy6X2q0q';
+var partnerApiKey = process.env.PARTNER_API_KEY;
 var subscriptionEmailList = [];
 
 router.post('/webhook/events/subscription/email', (req, res) => {
@@ -54,7 +56,7 @@ var publishEventToConsumer = function (data) {
     console.log(signature);
 
     //const URL = 'https://jsonplaceholder.typicode.com/todos';
-    const URL = 'https://ws-qa4.hondaweb.com/REST/Webhook/event/1.0'
+    const URL = process.env.EVENT_CONSUMER_URL;
     //const URL = "https://4536-27-7-43-102.in.ngrok.io/localtest/sandbox/testhook/consume";
     const body = payload;
     const hdrs = {
