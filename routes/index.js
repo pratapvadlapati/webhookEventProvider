@@ -5,7 +5,7 @@ const events = require('events');
 const eventEmitter = new events.EventEmitter();
 var crypto = require('crypto');
 
-const reqData = require('./Req');
+//const reqData = require('./Req');
 //secret message api key shared by partner        
 var partnerApiKey = '2bh7Ptx0pdYn9NWv5a9S1WPaer2BQ3U4R40pygAqnQMy6X2q0q';
 var subscriptionEmailList = [];
