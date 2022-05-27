@@ -21,3 +21,12 @@ Sample Request:
 {
     "email": "youremail@anydomain.com"
 }
+
+Expected Response:
+
+{
+    "message": "eventTriggered",
+    "subscriptionList": [
+        "givenEmailidInReq@anydomain.com"
+    ]
+}
